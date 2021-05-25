@@ -6,7 +6,7 @@ import {
   WeekView,
   Appointments,
   Toolbar,
-  // ViewSwitcher,
+  ViewSwitcher,
   MonthView,
   DayView,
   DateNavigator,
@@ -16,7 +16,6 @@ import {
   TodayButton,
 } from "@devexpress/dx-react-scheduler-material-ui";
 import { data } from "../data";
-import Switcher from "./ViewSwitcher";
 import {
   DayScaleCellWeekView,
   TimeTableCellWeekView,
@@ -34,18 +33,18 @@ const View = () => {
     setCurrentDate(date);
   };
 
-  const handleCurrentViewChange = (event) => {
-    // console.log(event.target.value);
+  const handleCurrentViewChange = (view) => {
+    console.log(view);
     // ! call to endpoint can go here
-    setCurrentView(event.target.value);
+    setCurrentView(view);
   };
 
   return (
     <>
-      <Switcher
+      {/* <Switcher
         currentViewName={currentView}
         onChange={handleCurrentViewChange}
-      />
+      /> */}
       <Paper>
         <Scheduler
           data={data}
@@ -91,7 +90,10 @@ const View = () => {
             updateInterval={100000}
           />
           <TodayButton />
-          {/* <ViewSwitcher /> */}
+          <ViewSwitcher
+            onCurrentViewNameChange={handleCurrentViewChange}
+            currentViewName={currentView}
+          />
         </Scheduler>
       </Paper>
     </>
