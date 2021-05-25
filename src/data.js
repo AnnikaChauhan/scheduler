@@ -1,7 +1,7 @@
 export const data = [
   {
     communication_id: "b0b4c843-190a-4d44-a048-74882b31e975",
-    title: "Test 1",
+    title: "Campaign 1",
     brand: "NG",
     state: "sent",
     type: "csv",
@@ -23,7 +23,7 @@ export const data = [
   },
   {
     communication_id: "419b7e8c-4378-45bb-9344-701313c51333",
-    title: "Test 2",
+    title: "Campaign 2",
     brand: "NG",
     state: "sent",
     type: "csv",
@@ -45,7 +45,7 @@ export const data = [
   },
   {
     communication_id: "d0a5d23c-0cfc-4b94-b777-0f7bf62e8ced",
-    title: "Test 3",
+    title: "Campaign 3",
     brand: "NG",
     state: "sent",
     type: "csv",
@@ -67,7 +67,7 @@ export const data = [
   },
   {
     communication_id: "e759f070-101f-4a85-8f97-da043d45d36e",
-    title: "Test 4",
+    title: "Campaign 4",
     brand: "NG",
     state: "sent",
     type: "csv",
@@ -89,7 +89,7 @@ export const data = [
   },
   {
     communication_id: "f71bec60-bcbe-47b8-bfd7-c54563e7176d",
-    title: "Test 5",
+    title: "Campaign 5",
     brand: "NG",
     state: "sent",
     type: "csv",
@@ -100,7 +100,7 @@ export const data = [
     templates: [
       {
         template_id: "3763decf-4e80-444e-a8a1-cde47b687415",
-        title: "Testing",
+        title: "Campaigning",
         type: 3,
         params: {
           visibility_time_range: [null, null],
@@ -113,7 +113,7 @@ export const data = [
   },
   {
     communication_id: "a7013b8b-4be0-4f3f-a261-4e695d6e6bf6",
-    title: "Test 6",
+    title: "Campaign 6",
     brand: "NG",
     state: "sent",
     type: "csv",
@@ -135,7 +135,7 @@ export const data = [
   },
   {
     communication_id: "ce520b44-ab1a-44f3-b340-6aa405b5bd30",
-    title: "Test 7",
+    title: "Campaign 7",
     brand: null,
     state: "sent",
     type: "csv",
@@ -159,7 +159,7 @@ export const data = [
   },
   {
     communication_id: "abcd7a85-68c4-46fe-9d51-b0daf3f77986",
-    title: "Test 8",
+    title: "Campaign 8",
     brand: "NG",
     state: "sent",
     type: "csv",
