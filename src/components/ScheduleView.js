@@ -17,7 +17,7 @@ import Switcher from "./ViewSwitcher";
 
 const View = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [currentView, setCurrentView] = useState("Week");
+  const [currentView, setCurrentView] = useState("Month");
 
   const handleCurrentDateChange = (date) => {
     // console.log(date);
@@ -38,9 +38,12 @@ const View = () => {
         onChange={handleCurrentViewChange}
       />
       <Paper>
-        <Scheduler data={data} height={660}>
+        <Scheduler
+          data={data}
+          // can give a max height to the component
+          // height={660}
+        >
           <ViewState
-            defaultCurrentViewName="Week"
             currentDate={currentDate}
             onCurrentDateChange={handleCurrentDateChange}
             currentViewName={currentView}
