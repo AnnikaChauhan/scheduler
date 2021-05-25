@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Paper from "@material-ui/core/Paper";
 import { ViewState } from "@devexpress/dx-react-scheduler";
-import { Plugin } from "@devexpress/dx-react-core";
 import {
   Scheduler,
   WeekView,
@@ -11,6 +10,8 @@ import {
   MonthView,
   DayView,
   DateNavigator,
+  AppointmentTooltip,
+  AppointmentForm,
 } from "@devexpress/dx-react-scheduler-material-ui";
 import { data } from "../data";
 import Switcher from "./ViewSwitcher";
@@ -62,8 +63,10 @@ const View = () => {
 
           <Toolbar />
           <DateNavigator />
-          {/* <ViewSwitcher /> */}
           <Appointments />
+          <AppointmentTooltip showCloseButton showOpenButton />
+          <AppointmentForm readOnly />
+          {/* <ViewSwitcher /> */}
         </Scheduler>
       </Paper>
     </>
