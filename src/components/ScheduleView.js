@@ -1,44 +1,67 @@
 import React, { useState } from "react";
 import Paper from "@material-ui/core/Paper";
 import { ViewState } from "@devexpress/dx-react-scheduler";
+import { Plugin } from "@devexpress/dx-react-core";
 import {
   Scheduler,
   WeekView,
   Appointments,
   Toolbar,
-  ViewSwitcher,
+  // ViewSwitcher,
   MonthView,
   DayView,
+  DateNavigator,
 } from "@devexpress/dx-react-scheduler-material-ui";
 import { data } from "../data";
+import Switcher from "./ViewSwitcher";
 
 const View = () => {
-  const [view, setView] = useState();
-  return (
-    <Paper>
-      <Scheduler data={data}>
-        <ViewState currentDate={new Date()} />
-        <WeekView
-          startDayHour={10}
-          endDayHour={19}
-          currentViewName={view}
-          onCurrentViewNameChange={setView}
-        />
-        <WeekView
-          name="work-week"
-          displayName="Work Week"
-          excludedDays={[0, 6]}
-          startDayHour={9}
-          endDayHour={19}
-        />
-        <MonthView />
-        <DayView />
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [currentView, setCurrentView] = useState("Week");
 
-        <Toolbar />
-        <ViewSwitcher />
-        <Appointments />
-      </Scheduler>
-    </Paper>
+  const handleCurrentDateChange = (date) => {
+    // console.log(date);
+    // ! call to endpoint can go here
+    setCurrentDate(date);
+  };
+
+  const handleCurrentViewChange = (event) => {
+    // console.log(event.target.value);
+    // ! call to endpoint can go here
+    setCurrentView(event.target.value);
+  };
+
+  return (
+    <>
+      <Switcher
+        currentViewName={currentView}
+        onChange={handleCurrentViewChange}
+      />
+      <Paper>
+        <Scheduler data={data} height={660}>
+          <ViewState
+            defaultCurrentViewName="Week"
+            currentDate={currentDate}
+            onCurrentDateChange={handleCurrentDateChange}
+          />
+          <WeekView startDayHour={10} endDayHour={19} />
+          <WeekView
+            name="work-week"
+            displayName="Work Week"
+            excludedDays={[0, 6]}
+            startDayHour={9}
+            endDayHour={19}
+          />
+          <MonthView />
+          <DayView />
+
+          <Toolbar />
+          <DateNavigator />
+          {/* <ViewSwitcher /> */}
+          <Appointments />
+        </Scheduler>
+      </Paper>
+    </>
   );
 };
 
