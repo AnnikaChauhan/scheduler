@@ -16,6 +16,12 @@ import {
 import { data } from "../data";
 import Switcher from "./ViewSwitcher";
 import { fade } from "@material-ui/core/styles/colorManipulator";
+import {
+  DayScaleCellWeekView,
+  TimeTableCellWeekView,
+  DayScaleCellMonthView,
+  TimeTableCellMonthView,
+} from "./cellCustomisation";
 
 const useStyles = makeStyles((theme) => ({
   todayCell: {
@@ -60,37 +66,6 @@ const View = () => {
     setCurrentView(event.target.value);
   };
 
-  const TimeTableCell = (props) => {
-    const classes = useStyles();
-    const { startDate } = props;
-    const date = new Date(startDate);
-
-    if (date.getDate() === new Date().getDate()) {
-      return (
-        <WeekView.TimeTableCell {...props} className={classes.todayCell} />
-      );
-    }
-    if (date.getDay() === 0 || date.getDay() === 6) {
-      return (
-        <WeekView.TimeTableCell {...props} className={classes.weekendCell} />
-      );
-    }
-    return <WeekView.TimeTableCell {...props} />;
-  };
-
-  const DayScaleCell = (props) => {
-    const classes = useStyles();
-    const { startDate, today } = props;
-
-    if (today) {
-      return <WeekView.DayScaleCell {...props} className={classes.today} />;
-    }
-    if (startDate.getDay() === 0 || startDate.getDay() === 6) {
-      return <WeekView.DayScaleCell {...props} className={classes.weekend} />;
-    }
-    return <WeekView.DayScaleCell {...props} />;
-  };
-
   return (
     <>
       <Switcher
@@ -112,8 +87,8 @@ const View = () => {
           <WeekView
             startDayHour={7}
             endDayHour={19}
-            timeTableCellComponent={TimeTableCell}
-            dayScaleCellComponent={DayScaleCell}
+            timeTableCellComponent={TimeTableCellWeekView}
+            dayScaleCellComponent={DayScaleCellWeekView}
           />
           <WeekView
             name="Work Week"
@@ -121,10 +96,13 @@ const View = () => {
             excludedDays={[0, 6]}
             startDayHour={9}
             endDayHour={19}
-            timeTableCellComponent={TimeTableCell}
-            dayScaleCellComponent={DayScaleCell}
+            timeTableCellComponent={TimeTableCellWeekView}
+            dayScaleCellComponent={DayScaleCellWeekView}
           />
-          <MonthView />
+          <MonthView
+            timeTableCellComponent={TimeTableCellMonthView}
+            dayScaleCellComponent={DayScaleCellMonthView}
+          />
           <DayView />
 
           <Toolbar />
