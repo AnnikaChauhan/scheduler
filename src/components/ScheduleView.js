@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Paper, makeStyles } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 import { ViewState } from "@devexpress/dx-react-scheduler";
 import {
   Scheduler,
@@ -11,12 +11,11 @@ import {
   DayView,
   DateNavigator,
   AppointmentTooltip,
-  AppointmentForm,
+  // AppointmentForm,
   CurrentTimeIndicator,
 } from "@devexpress/dx-react-scheduler-material-ui";
 import { data } from "../data";
 import Switcher from "./ViewSwitcher";
-import { fade } from "@material-ui/core/styles/colorManipulator";
 import {
   DayScaleCellWeekView,
   TimeTableCellWeekView,
@@ -86,7 +85,7 @@ const View = () => {
           {/* this is that edit thing from like a draw that we prob won't use as we have our own functionality */}
           {/* <AppointmentForm readOnly /> */}
           <CurrentTimeIndicator
-            shadePreviousCells={true}
+            // shadePreviousCells={true}
             shadePreviousAppointments={true}
             updateInterval={100000}
           />
