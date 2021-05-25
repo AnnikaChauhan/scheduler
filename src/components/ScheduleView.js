@@ -43,10 +43,12 @@ const View = () => {
             defaultCurrentViewName="Week"
             currentDate={currentDate}
             onCurrentDateChange={handleCurrentDateChange}
+            currentViewName={currentView}
+            onCurrentViewNameChange={handleCurrentViewChange}
           />
           <WeekView startDayHour={10} endDayHour={19} />
           <WeekView
-            name="work-week"
+            name="Work Week"
             displayName="Work Week"
             excludedDays={[0, 6]}
             startDayHour={9}
