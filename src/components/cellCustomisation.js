@@ -1,17 +1,8 @@
-import React, { useState } from "react";
-import { Paper, makeStyles } from "@material-ui/core";
-import { ViewState } from "@devexpress/dx-react-scheduler";
+import React from "react";
+import { makeStyles } from "@material-ui/core";
 import {
-  Scheduler,
   WeekView,
-  Appointments,
-  Toolbar,
-  // ViewSwitcher,
   MonthView,
-  DayView,
-  DateNavigator,
-  AppointmentTooltip,
-  AppointmentForm,
 } from "@devexpress/dx-react-scheduler-material-ui";
 import { fade } from "@material-ui/core/styles/colorManipulator";
 
