@@ -76,7 +76,10 @@ export const TimeTableCellMonthView = (props) => {
   const { startDate } = props;
   const date = new Date(startDate);
 
-  if (date.getDate() === new Date().getDate()) {
+  if (
+    date.getDate() === new Date().getDate() &&
+    date.getMonth() === new Date().getMonth()
+  ) {
     return <MonthView.TimeTableCell {...props} className={classes.todayCell} />;
   }
   if (date.getDay() === 0 || date.getDay() === 6) {
