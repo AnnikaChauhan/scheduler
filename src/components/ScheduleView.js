@@ -50,7 +50,7 @@ const View = () => {
             currentViewName={currentView}
             onCurrentViewNameChange={handleCurrentViewChange}
           />
-          <WeekView startDayHour={10} endDayHour={19} />
+          <WeekView startDayHour={7} endDayHour={19} />
           <WeekView
             name="Work Week"
             displayName="Work Week"

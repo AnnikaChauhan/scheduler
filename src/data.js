@@ -95,8 +95,8 @@ export const data = [
     type: "csv",
     created_at: "2021-05-18T12:21:58.000Z",
     updated_at: "2021-05-18T15:18:48.000Z",
-    startDate: "2021-05-01T09:00",
-    endDate: "2021-05-01T11:00",
+    startDate: "2021-05-01T09:45",
+    endDate: "2021-05-01T10:15",
     templates: [
       {
         template_id: "3763decf-4e80-444e-a8a1-cde47b687415",
