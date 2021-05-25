@@ -21,6 +21,8 @@ import {
   TimeTableCellWeekView,
   DayScaleCellMonthView,
   TimeTableCellMonthView,
+  AppointmentTooltipContent,
+  AppointmentTooltipHeader,
 } from "./cellCustomisation";
 
 const View = () => {
@@ -63,6 +65,7 @@ const View = () => {
             timeTableCellComponent={TimeTableCellWeekView}
             dayScaleCellComponent={DayScaleCellWeekView}
           />
+          {/* if you comment out one of the views then it takes it from the switcher */}
           <WeekView
             name="Work Week"
             displayName="Work Week"
@@ -81,7 +84,13 @@ const View = () => {
           <Toolbar />
           <DateNavigator />
           <Appointments />
-          <AppointmentTooltip showCloseButton showOpenButton />
+          <AppointmentTooltip
+            showCloseButton
+            // open button is the edit button
+            // showOpenButton
+            contentComponent={AppointmentTooltipContent}
+            headerComponent={AppointmentTooltipHeader}
+          />
           {/* this is that edit thing from like a draw that we prob won't use as we have our own functionality */}
           {/* <AppointmentForm readOnly /> */}
           <CurrentTimeIndicator

@@ -2,6 +2,7 @@ export const data = [
   {
     communication_id: "b0b4c843-190a-4d44-a048-74882b31e975",
     title: "Campaign 1",
+    description: "This is a description for campaign 1",
     brand: "NG",
     state: "sent",
     type: "csv",
@@ -24,6 +25,7 @@ export const data = [
   {
     communication_id: "419b7e8c-4378-45bb-9344-701313c51333",
     title: "Campaign 2",
+    description: "This is a description for campaign 2",
     brand: "NG",
     state: "sent",
     type: "csv",
@@ -46,6 +48,7 @@ export const data = [
   {
     communication_id: "d0a5d23c-0cfc-4b94-b777-0f7bf62e8ced",
     title: "Campaign 3",
+    description: "This is a description for campaign 3",
     brand: "NG",
     state: "sent",
     type: "csv",
@@ -68,6 +71,7 @@ export const data = [
   {
     communication_id: "e759f070-101f-4a85-8f97-da043d45d36e",
     title: "Campaign 4",
+    description: "This is a description for campaign 4",
     brand: "NG",
     state: "sent",
     type: "csv",
@@ -90,6 +94,7 @@ export const data = [
   {
     communication_id: "f71bec60-bcbe-47b8-bfd7-c54563e7176d",
     title: "Campaign 5",
+    description: "This is a description for campaign 5",
     brand: "NG",
     state: "sent",
     type: "csv",
@@ -114,6 +119,7 @@ export const data = [
   {
     communication_id: "a7013b8b-4be0-4f3f-a261-4e695d6e6bf6",
     title: "Campaign 6",
+    description: "This is a description for campaign 6",
     brand: "NG",
     state: "sent",
     type: "csv",
@@ -136,6 +142,7 @@ export const data = [
   {
     communication_id: "ce520b44-ab1a-44f3-b340-6aa405b5bd30",
     title: "Campaign 7",
+    description: "This is a description for campaign 7",
     brand: null,
     state: "sent",
     type: "csv",
@@ -160,6 +167,7 @@ export const data = [
   {
     communication_id: "abcd7a85-68c4-46fe-9d51-b0daf3f77986",
     title: "Campaign 8",
+    description: "This is a description for campaign 8",
     brand: "NG",
     state: "sent",
     type: "csv",
