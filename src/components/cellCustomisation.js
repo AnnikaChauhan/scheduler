@@ -7,6 +7,7 @@ import {
 } from "@devexpress/dx-react-scheduler-material-ui";
 import { fade } from "@material-ui/core/styles/colorManipulator";
 import Grid from "@material-ui/core/Grid";
+import DescriptionIcon from "@material-ui/icons/Description";
 
 const useStyles = makeStyles((theme) => ({
   todayCell: {
@@ -122,8 +123,13 @@ export const AppointmentTooltipContent = ({
       {...restProps}
       appointmentData={appointmentData}
     >
-      <Grid container alignItems="center" className={classes.textCenter}>
-        <span>{appointmentData.description}</span>
+      <Grid container alignItems="center">
+        <Grid item xs={2} className={classes.textCenter}>
+          <DescriptionIcon className={classes.icon} />
+        </Grid>
+        <Grid item xs={10}>
+          <span>{appointmentData.description}</span>
+        </Grid>
       </Grid>
     </AppointmentTooltip.Content>
   );
