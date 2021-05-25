@@ -12,6 +12,7 @@ import {
   DateNavigator,
   AppointmentTooltip,
   AppointmentForm,
+  CurrentTimeIndicator,
 } from "@devexpress/dx-react-scheduler-material-ui";
 import { data } from "../data";
 import Switcher from "./ViewSwitcher";
@@ -22,33 +23,6 @@ import {
   DayScaleCellMonthView,
   TimeTableCellMonthView,
 } from "./cellCustomisation";
-
-const useStyles = makeStyles((theme) => ({
-  todayCell: {
-    backgroundColor: fade(theme.palette.primary.main, 0.1),
-    "&:hover": {
-      backgroundColor: fade(theme.palette.primary.main, 0.14),
-    },
-    "&:focus": {
-      backgroundColor: fade(theme.palette.primary.main, 0.16),
-    },
-  },
-  weekendCell: {
-    backgroundColor: fade(theme.palette.action.disabledBackground, 0.04),
-    "&:hover": {
-      backgroundColor: fade(theme.palette.action.disabledBackground, 0.04),
-    },
-    "&:focus": {
-      backgroundColor: fade(theme.palette.action.disabledBackground, 0.04),
-    },
-  },
-  today: {
-    backgroundColor: fade(theme.palette.primary.main, 0.16),
-  },
-  weekend: {
-    backgroundColor: fade(theme.palette.action.disabledBackground, 0.06),
-  },
-}));
 
 const View = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -109,7 +83,13 @@ const View = () => {
           <DateNavigator />
           <Appointments />
           <AppointmentTooltip showCloseButton showOpenButton />
-          <AppointmentForm readOnly />
+          {/* this is that edit thing from like a draw that we prob won't use as we have our own functionality */}
+          {/* <AppointmentForm readOnly /> */}
+          <CurrentTimeIndicator
+            shadePreviousCells={true}
+            shadePreviousAppointments={true}
+            updateInterval={100000}
+          />
           {/* <ViewSwitcher /> */}
         </Scheduler>
       </Paper>
