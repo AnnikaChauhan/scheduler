@@ -13,6 +13,7 @@ import {
   AppointmentTooltip,
   // AppointmentForm,
   CurrentTimeIndicator,
+  TodayButton,
 } from "@devexpress/dx-react-scheduler-material-ui";
 import { data } from "../data";
 import Switcher from "./ViewSwitcher";
@@ -89,6 +90,7 @@ const View = () => {
             shadePreviousAppointments={true}
             updateInterval={100000}
           />
+          <TodayButton />
           {/* <ViewSwitcher /> */}
         </Scheduler>
       </Paper>
