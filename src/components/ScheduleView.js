@@ -27,7 +27,7 @@ import {
 
 const View = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [currentView, setCurrentView] = useState("Week");
+  const [currentView, setCurrentView] = useState("Month");
 
   const handleCurrentDateChange = (date) => {
     // console.log(date);
